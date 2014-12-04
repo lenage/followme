@@ -9,6 +9,6 @@ p 欢迎来到  Followme 社区，在这里你将找到很多和你兴趣相投�
       li
         = user.display_name
         a.profile-link href=(profile_path(user.id)) 个人资料
-        - unless current_user.try(:friends).try{|x| x.include?(user) }
+        - if current_user && !current_user.try(:friends).try{|x| x.include?(user) }
           a.follow-btn.button data={uid: user.id} href="/follow"
             | Follow
