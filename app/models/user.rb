@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
   end
 
   def self.others current_user
-    User.where.not(id: current_user.id)
+    if current_user.present?
+      User.where.not(id: current_user.id)
+    else
+      User.all
+    end
   end
 
   def display_name

@@ -6,6 +6,7 @@ gem 'rails', '4.1.8'
 gem 'pg'
 gem 'devise'
 gem 'amistad'
+gem 'thin'
 
 gem 'slim-rails'
 
