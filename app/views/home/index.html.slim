@@ -8,4 +8,6 @@ p 欢迎来到  Followme 社区，在这里你将找到很多和你兴趣相投�
     - @other_users.each do |user|
       li
         = user.display_name
-        a.follow-btn.button href="/" Follow
+        - unless current_user.friends.include?(user)
+          a.follow-btn.button data={uid: user.id} href="/follow"
+            | Follow

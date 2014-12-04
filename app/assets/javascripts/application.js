@@ -17,3 +17,17 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$('.follow-btn').click(function(e){
+  e.preventDefault();
+  var _this = $(this);
+  $.ajax("/follow", {
+    method: "POST",
+    data: {user_id: _this.data('uid')},
+    success: function(data){
+      if(data) {
+        _this.hide();
+      }
+    }
+  });
+});
