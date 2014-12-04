@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  include Amistad::FriendModel
+
   def self.others current_user
     User.where.not(id: current_user.id)
   end
