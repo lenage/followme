@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
 
+  scope :latests, lambda { order(updated_at: :desc)}
   def self.all_users_profiles_hash
     User.all.map do |u|
       {

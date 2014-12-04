@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
 
   has_many :profiles
 
+  # accepts_nested_attributes_for :profiles, reject_if: :all_blank
+
+  #TODO: should delegete profile desc to user and
+
+  def desc
+    profiles.latests.first
+  end
+
   def self.others current_user
     User.where.not(id: current_user.id)
   end
