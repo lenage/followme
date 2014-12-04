@@ -1,1 +1,9 @@
-h1 Welcome
+h1
+  |欢迎 &nbsp;
+  = current_user.try(:display_name)
+p 欢迎来到  Followme 社区，在这里你将找到很多和你兴趣相投的朋友!!
+
+.row
+  ul
+    - 1.upto(10).each do |x|
+      li = x
