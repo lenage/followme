@@ -20,6 +20,7 @@ end
 
 5.times do |y|
   10.times do |x|
-    Profile.create(user_id: y+1, desc: "个人资料之#{x}")
+    sleep 1
+    Profile.create(user_id: y+1, desc: "个人资料内容区域 #{Time.now.to_s}")
   end
 end
