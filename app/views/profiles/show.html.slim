@@ -1,0 +1,8 @@
+h1
+  = @user.try(:display_name)
+  | 的个人资料
+
+.row
+  ul
+    - @profiles.each do |p|
+      li = p.desc

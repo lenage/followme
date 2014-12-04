@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :follow, :controller => 'friendships'
+  resources :profiles
   # example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

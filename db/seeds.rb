@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -15,4 +16,10 @@ users = [
 
 users.each do |x|
   User.create!(x.merge(password: "9ljk484B", password_confirmation: "9ljk484B"))
+end
+
+5.times do |y|
+  10.times do |x|
+    Profile.create(user_id: y+1, desc: "个人资料之#{x}")
+  end
 end

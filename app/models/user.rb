@@ -6,11 +6,16 @@ class User < ActiveRecord::Base
 
   include Amistad::FriendModel
 
+  has_many :profiles
+
   def self.others current_user
     User.where.not(id: current_user.id)
   end
 
   def display_name
     name || email
+  end
+
+  def profile_descriptions
   end
 end
