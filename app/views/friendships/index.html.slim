@@ -1,0 +1,10 @@
+h1
+  = current_user.try(:display_name)
+  | 关注的人
+
+.row
+  ul
+    - @friends.each do |user|
+      li
+        = user.display_name
+        a.profile-link href=(profile_path(user.id)) 个人资料
